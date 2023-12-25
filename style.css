@@ -1,0 +1,32 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family:'Times New Roman', Times, serif;
+}
+
+body{
+  background-color: #7f0788;
+}
+
+.app-container{
+background-color: white;
+max-width: 600px;
+width: 90%;
+margin: 100px auto 0;
+padding: 30px;
+border-radius: 10px;
+} 
+
+.app-container h1{
+  font-size: 25px;
+  color: #001e4d;
+  border-bottom: 1px soild #333;
+  padding-bottom: 30px;
+  font-weight: bold;
+}
+
+.quiz-wrapper{
+  padding: 20px 0;
+  
+}
