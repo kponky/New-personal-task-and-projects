@@ -23,7 +23,7 @@ const quizQuestions = [
     ]
   }, 
   {
-    question: "Which animal is known as the 'Ship of the Desert?",
+    question: "Which animal is known as the 'Ship of the Desert'?",
        answers: [
       {text: " Horse", correct: false},
       {text:  "Donkey", correct: false},
@@ -106,7 +106,7 @@ const quizQuestions = [
     ]
   }, 
   {
-    question: "Baby frog is known as.......",
+    question: "Baby frog is known as...",
        answers: [
       {text: "Baby Frog", correct:false},
       {text: "Froggy", correct: false},
@@ -118,27 +118,72 @@ const quizQuestions = [
     question: "Name a National bird in India?",
        answers: [
       {text: "Eagle", correct:false},
-      {text: "Peacock", correct: false},
+      {text: "Peacock", correct: true},
       {text: "Cock", correct: false},
       {text: "Vulture", correct: false},
     ]
   }, 
   {
-    question: "Ibibio ethnic group is predominantly found in which Nigerian state?",
+    question: " How many continents are there in the world?",
        answers: [
-      {text: "Cross River State", correct:false},
-      {text: "Edo State", correct: false},
-      {text: "Delta State", correct: false},
-      {text: "Akwa Ibom State", correct: true},
+      {text: "21 continents", correct:false},
+      {text: "15 continents", correct: false},
+      {text: "10 continents", correct: false},
+      {text: "& continents", correct: true},
     ]
   }, 
   {
-    question: "Ibibio ethnic group is predominantly found in which Nigerian state?",
+    question: "Name the largest planet in the solar system",
        answers: [
-      {text: "Cross River State", correct:false},
-      {text: "Edo State", correct: false},
-      {text: "Delta State", correct: false},
-      {text: "Akwa Ibom State", correct: true},
+      {text: "Earth", correct:false},
+      {text: "Pluto", correct: false},
+      {text: "Jupiter", correct: true},
+      {text: "Satur", correct: false},
+    ]
+  }, 
+  {
+    question: "Who won Big Brother in 2023?",
+       answers: [
+      {text: "Ilebaye Odiniya", correct:true},
+      {text: "Ijeoma Otabor “Phyna”", correct: false},
+      {text: "Hazel Onou “Whitemoney”", correct: false},
+      {text: "Mercy Eke", correct: false},
+    ]
+  }, 
+  {
+    question: "What is the chemical symbol for tin?",
+       answers: [
+      {text: "H20", correct:false},
+      {text: "Sn", correct: true},
+      {text: "Tn", correct: false},
+      {text: "Ni", correct: false},
+    ]
+  }, 
+  {
+    question: "Name the largest planet in the solar system",
+       answers: [
+      {text: "Earth", correct:false},
+      {text: "Pluto", correct: false},
+      {text: "Jupiter", correct: true},
+      {text: "Saturn", correct: false},
+    ]
+  }, 
+  {
+    question: "What is the most expensive fruit in the world?",
+       answers: [
+      {text: "Orange", correct:false},
+      {text: "Grapes", correct: false},
+      {text: "Yubari King Melon", correct: true},
+      {text: "Strawberry", correct: false},
+    ]
+  }, 
+  {
+    question: "How many bones are in the human body?",
+       answers: [
+      {text: "107", correct:false},
+      {text: "115", correct: false},
+      {text: "1000", correct: false},
+      {text: "206", correct: true},
     ]
   }, 
 
@@ -171,7 +216,7 @@ function showQuestion(){
       button.dataset.correct = answers.correct
     }
     button.addEventListener("click", selectAnswer);
-  });
+  })
 };
 
 function resetState(){
