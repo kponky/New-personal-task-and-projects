@@ -6,7 +6,7 @@
 }
 
 body{
-  background: url(/quiz\ bg.jpg);
+  background: url(quiz\ bg\ 3.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   /* height: 80%;
@@ -16,19 +16,18 @@ body{
 
 
 .app-container{
-    background: linear-gradient(120deg, #1c017cf2, #99087fa3,#2F46B8, #d1058d);;
-
-/* background-color: white; */
-max-width: 850px;
+  background-color: #ffffffb6;
+/* background: linear-gradient(120deg, #7a017c2e, #0b2a11a3, #e1e7e000); */
+max-width: 700px;
 width: 100%;
-margin: 110px 290px 20px;
+margin: 110px auto 20px;
 padding: 30px;
-border-radius: 30px;
+border-radius: 20px;
 } 
 
 .app-container h1{
   font-size: 25px;
-  color: #f2f4f8;
+  color: #010713;
   font-weight: bold;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: center;
@@ -43,7 +42,7 @@ border-radius: 30px;
 
 .quiz-wrapper h2{
   font-size: 19px;
-  color: #f1f4f9;
+  color: #000308;
   font-weight: 800;
   margin-bottom: 15px;
 
@@ -93,7 +92,8 @@ border-radius: 30px;
   padding: 16px;
   margin: 10px 0;
   text-align: left;
-  border-radius: 50% 50% 70% 50% / 25% 25% 25% 25%;
+  border-radius: 20px;
+  /* border-radius: 50% 50% 70% 50% / 25% 25% 25% 25%; */
 
 
 
@@ -109,21 +109,23 @@ border-radius: 30px;
 
 .btn:hover:not([disabled]){
   /* background: #534d4d; */
-  color: #fff;
-  background: linear-gradient(120deg, #1c017cf2, #99087fa3,#2F46B8, #d1058d);;
-  ;
-
+  color:white;
+    background: linear-gradient(120deg, #7a017c2e,#4ea226, #083802cf);
+  /* background: linear-gradient(120deg, #1c017cf2, #99087fa3,#2F46B8, #d1058d);; */
 }
+
+
 
 #next-btn{
   width: 160px;
   font-size: 17px;
   color: white;
-  background: #df04ac;
+  background: rgb(34, 53, 2);
   font-weight: 600;
   cursor: pointer;
   margin: 20px auto 0;
-  border-radius: 50% 50% 70% 50% / 25% 25% 25% 25%;
+  border-radius: 20px;
+  /* border-radius: 50% 50% 70% 50% / 25% 25% 25% 25%; */
   padding: 10px;
   z-index: 0;
   text-align: center;
@@ -268,9 +270,14 @@ border-radius: 30px;
 /* } */
 
 .correct{
-  background-color: #034620;
+  border: 2px solid green;
+
+  /* background-color: #034620; */
 }
 
 .incorrect{
-  background: #a30505c1;
+  border: 2px solid #a30505c1;
+  /* background: #a30505c1; */
 }
+
+

@@ -27,14 +27,14 @@ const quizQuestions = [
        answers: [
       {text: " Horse", correct: false},
       {text:  "Donkey", correct: false},
-      {text: "cow", correct: false},
+      {text: "Cow", correct: false},
       {text: "Camel", correct: true},
     ]
   }, 
   {
     question: " Rainbow consist of how many colours?",
        answers: [
-      {text: "  7 colors", correct: true},
+      {text: "7 colors", correct: true},
       {text:  "10 colors", correct: false},
       {text: "6 colors", correct: false},
       {text: "9 colors", correct: false},
@@ -47,7 +47,7 @@ const quizQuestions = [
       {text: "Pacific Ocean", correct: true},
       {text: "Arctic Ocean", correct: false},
       {text: "Indian Ocean", correct: false},
-      {text: " Atlantic Ocean", correct: false},
+      {text: "Atlantic Ocean", correct: false},
     ]
   }, 
   {
@@ -129,7 +129,7 @@ const quizQuestions = [
       {text: "21 continents", correct:false},
       {text: "15 continents", correct: false},
       {text: "10 continents", correct: false},
-      {text: "& continents", correct: true},
+      {text: "7 continents", correct: true},
     ]
   }, 
   {
@@ -138,7 +138,7 @@ const quizQuestions = [
       {text: "Earth", correct:false},
       {text: "Pluto", correct: false},
       {text: "Jupiter", correct: true},
-      {text: "Satur", correct: false},
+      {text: "Saturn", correct: false},
     ]
   }, 
   {
