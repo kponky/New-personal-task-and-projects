@@ -1,6 +1,7 @@
 const questionElement = document.getElementById("questions");
 const answerBtns= document.getElementById("answer-buttons");
 const nextBtn = document.getElementById("next-btn");
+const timerELement = document.getElementById("time");
 
 const quizQuestions = [
   {
@@ -192,12 +193,18 @@ const quizQuestions = [
 let currentQuestionIndex = 0;
 let score = 0;
 
-function startQuiz(){
-  currentQuestionIndex = 0;
-  score = 0;
-  nextBtn.innerHTML = "Next"
-  showQuestion();
-}
+
+
+
+// function startQuiz(){
+//   currentQuestionIndex = 0;
+//   score = 0;
+//   timeRemaining = totalTime; //callling startTimer () wheen starting the quiz
+//   nextBtn.innerHTML = "Next"
+//   shuffleArray(quizQuestions);
+//   showQuestion();
+//   showQuestion() // starting ht timer when the start quiz begins
+// }
 
 function showQuestion(){
   resetState();
@@ -207,16 +214,30 @@ function showQuestion(){
   questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
 
 
-  currentQuestion.answers.forEach(answers => {
-    const button = document.createElement("button");
-    button.innerHTML = answers.text;
+ //defining my array for answer labels (A, B, C, D)
+
+//  const answerLabels = ["A", "B", "C", "D"];
+
+let currentLabel = "A"
+
+  // currentQuestion.answers.forEach(answers => {
+  currentQuestion.answers.forEach((answers) => {
+    const button = document.createElement("button"); 
+    // button.innerHTML = answers.text;
+    button.innerHTML =  `${currentLabel}. ${answers.text}`; //this is where i have added label to the answer options.
     button.classList.add("btn");
     answerBtns.appendChild(button);
+
     if(answers.correct){
       button.dataset.correct = answers.correct
     }
     button.addEventListener("click", selectAnswer);
-  })
+
+
+    // this is the increment label for the next answer
+
+    currentLabel = String.fromCharCode(currentLabel.charCodeAt(0) + 1);
+  });
 };
 
 function resetState(){
@@ -247,6 +268,13 @@ function selectAnswer(e){
   nextBtn.style.display = "block";
 }
 
+// adding function to handle timeout
+
+function handleTimeout(){
+  resetState();
+  questionElement.innerHTML = "Time's up! quiz has ended.";
+  showScore
+}
 
 function showScore(){
   resetState();
@@ -278,6 +306,7 @@ nextBtn.addEventListener("click", () => {
 function startQuiz(){
   currentQuestionIndex = 0;
   score = 0;
+  timeRemaining
   nextBtn.innerHTML = "Next";
   shuffleArray(quizQuestions);
   showQuestion();
@@ -291,6 +320,36 @@ function shuffleArray(array) {
 }
 startQuiz();
 
+
+// this is assigning the timer function to the quiz  app
+
+const totalTime = 60;
+let timeRemaining = totalTime;
+let timerInterval;
+
+
+// adding  fuction to start timer
+
+function startTimer(){
+  timerInterval = setInterval(updateTimer, 1000);
+}
+
+
+// adding function to updating the timer display
+
+function updateTimer(){
+  timeRemaining--;
+  timerELement.textContent = timeRemaining;
+
+
+  if(timeRemaining <= 0){
+    clearInterval(timerInterval);
+    handleTimeout();
+  }
+}
+
+
+// adding function to stop the time 
 
 
 
