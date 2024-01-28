@@ -188,6 +188,7 @@ user-select: none;
  .quiz-wrapper section{
   padding:  25px 30px 20px 30px;
   color: #3e0230;
+  background: whitesmoke;
  }
 
 
@@ -200,16 +201,49 @@ user-select: none;
  .quiz-wrapper section .options_wrap{
   padding: 20px 0;
   display: block;
-  color: yellow;
+  /* color: yellow; */
 
  }
 
- section .option{
+ section .options_wrap .option{
   background: rgba(4, 80, 127, 0.168);
   border: 1px solid #3e0235;
-  padding:  9px 16px;
+  padding:  10px 16px;
   border-radius: 6px;
   margin-bottom: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+ }
+
+ section .options_wrap .option:hover{
+  color: #170662;
+  background: rgba(43, 98, 132, 0.499);
+  border-color: #170662;
+ }
+ section .options_wrap .option:last-child{
+/* background-color: red; */
+margin-bottom: 0px;
+
+ }
+
+ section .options_wrap .option .icon{
+height: 26px;
+width: 26px;
+border: 2px solid transparent;
+border-radius: 50%;
+text-align: center;
+font-size: 14px;
+line-height: 25px;
+pointer-events: none;
+ }
+
+ section .options_wrap .option .icon .tick{
+  border-color: #174f17;
+  color:  #174f17;
  }
 
 
