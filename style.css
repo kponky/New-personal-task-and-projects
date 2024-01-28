@@ -1,0 +1,218 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body{
+  background: url(quiz\ bg\ 7.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  height: 100vh;
+}
+
+.start__btn{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: -1px 10px 7px 1px rgba(0,0,0,0.66);
+  -webkit-box-shadow: -1px 10px 7px 1px rgba(0,0,0,0.66);
+  -moz-box-shadow: -1px 10px 7px 1px rgba(0,0,0,0.66);
+}
+
+ .start__btn button{
+  color:  rgb(237, 27, 192);
+  /* color: rgb(235, 236, 237); */
+  padding: 20px 30px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 27px;
+  background-color:  rgb(235, 236, 237);
+  cursor: pointer; 
+  outline: none;
+}
+
+.quiz__info{
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 540px;
+  background-color: rgba(237, 241, 245, 0.873);
+  border-radius: 5%;
+  color: rgb(23, 163, 245);
+  box-shadow: -1px 10px 7px 1px rgba(0,0,0,0.66);
+  -webkit-box-shadow: -1px 10px 7px 1px rgba(0,0,0,0.66);
+  -moz-box-shadow: -1px 10px 7px 1px rgba(0,0,0,0.66);
+  /* box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75); */
+}
+
+.quiz__info .info__rules{
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  padding: 0 30px;
+  font-weight: 600;
+  background: rgb(23, 163, 245);
+  color: antiquewhite;
+  border-bottom: 2px solid rgb(237, 27, 192);
+}
+
+.quiz__info .info-rules_list{
+  padding: 15px 30px;
+
+}
+
+.quiz__info .info-rules_list .quiz-rules{
+margin: 10px 5px;
+font-size: 16px;
+}
+
+.quiz__info .info-rules_list .quiz-rules span{
+  font-weight: 700;
+  color: rgb(237, 27, 192);;
+}
+
+.quiz__info .buttons{
+  height: 70px;
+  align-items: center;
+  justify-content: flex-end;
+  display: flex;
+  padding: 0 30px;
+  border-top: 2px solid rgb(237, 27, 192);
+}
+
+.quiz__info .buttons button{
+  margin: 0 10px;
+  height: 40px;
+  width: 100px;
+  border: 1px solid transparent;
+  background: rgb(245, 245, 246);
+  font-weight: bold;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.buttons button.quit_btn{
+  color: rgb(23, 163, 245);
+    border: 1px solid  rgb(23, 163, 245);
+}
+
+.buttons button.quit_btn:hover{
+  background: rgb(2, 117, 184);  color: whitesmoke;
+
+}
+
+.buttons button.Contn_btn{
+  border: rgb(23, 163, 245);
+  color: whitesmoke;
+  background: rgb(23, 163, 245) ;
+}
+
+.buttons button.Contn_btn:hover{
+  color:  whitesmoke;
+  background: rgb(2, 117, 184);
+}
+
+
+.quiz-wrapper{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  border-radius: 10px;
+  background: whitesmoke;
+  /* color: red; */
+
+}
+
+.quiz-wrapper header{
+  height: 80px;
+  padding: 0 30px;
+  background: rgb(23, 163, 245);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0px 4px 6px 1px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 99;
+}
+
+.quiz-wrapper header .quiz_title{
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.quiz-wrapper header .quiz_timer{
+  height: 45px;
+  width: 140px;
+  background: rgba(4, 80, 127, 0.6);
+  border: 1px solid rgba(7, 127, 212, 0.418);
+  padding: 0 8px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quiz-wrapper header .quiz_timer .quiz_timer_text{
+font-weight: 500;
+font-size: 16px;
+user-select: none;
+}
+
+
+.quiz-wrapper header .quiz_timer .quiz_timer_seconds{
+  font-weight: 600;
+  height: 30px;
+  width: 45px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 5px;
+  border: 1px solid #3493;
+  background: #3e0230;
+ }
+
+ .quiz-wrapper section{
+  padding:  25px 30px 20px 30px;
+  color: #3e0230;
+ }
+
+
+ .quiz-wrapper section .questions_wrapper{
+  font-size: 21px;
+  font-weight: 700;
+ }
+
+
+ .quiz-wrapper section .options_wrap{
+  padding: 20px 0;
+  display: block;
+  color: yellow;
+
+ }
+
+ section .option{
+  background: rgba(4, 80, 127, 0.168);
+  border: 1px solid #3e0235;
+  padding:  9px 16px;
+  border-radius: 6px;
+  margin-bottom: 17px;
+ }
+
+
+
+
+
