@@ -1,7 +1,7 @@
 const questionElement = document.getElementById("questions");
 const answerBtns= document.getElementById("answer-buttons");
 const nextBtn = document.getElementById("next-btn");
-const timerELement = document.getElementById("time");
+const timerElement = document.getElementById("timer");
 
 const quizQuestions = [
   {
@@ -192,19 +192,21 @@ const quizQuestions = [
 
 let currentQuestionIndex = 0;
 let score = 0;
+// let timerIneterval;
+let timeRemaining = 0
 
 
 
 
-// function startQuiz(){
-//   currentQuestionIndex = 0;
-//   score = 0;
-//   timeRemaining = totalTime; //callling startTimer () wheen starting the quiz
-//   nextBtn.innerHTML = "Next"
-//   shuffleArray(quizQuestions);
-//   showQuestion();
-//   showQuestion() // starting ht timer when the start quiz begins
-// }
+function startQuiz(){
+  currentQuestionIndex = 0;
+  score = 0;
+  // timeRemaining = totalTime; //callling startTimer () wheen starting the quiz
+  nextBtn.innerHTML = "Next"
+  shuffleArray(quizQuestions);
+  showQuestion();
+  // showQuestion() // starting ht timer when the start quiz begins
+}
 
 function showQuestion(){
   resetState();
@@ -268,16 +270,19 @@ function selectAnswer(e){
   nextBtn.style.display = "block";
 }
 
+
+
 // adding function to handle timeout
 
-function handleTimeout(){
-  resetState();
-  questionElement.innerHTML = "Time's up! quiz has ended.";
-  showScore
-}
+// function handleTimeout(){
+//   resetState();
+//   questionElement.innerHTML = "Time's up! quiz has ended.";
+//   showScore
+// }
 
 function showScore(){
   resetState();
+  stopTimer(); // call the stoptmer to show when shpwing the score
   questionElement.innerHTML = `You score ${score} out of ${quizQuestions.length}!`;
   nextBtn.innerHTML = "Play Again";
   nextBtn.style.display = "block";
@@ -303,14 +308,16 @@ nextBtn.addEventListener("click", () => {
 })
 
 
-function startQuiz(){
-  currentQuestionIndex = 0;
-  score = 0;
-  timeRemaining
-  nextBtn.innerHTML = "Next";
-  shuffleArray(quizQuestions);
-  showQuestion();
-}
+// function startQuiz(){
+//   currentQuestionIndex = 0;
+//   score = 0;
+//   timeRemaining = totalTime;
+//   timerElement.textContent = timeRemaining; // this casll the timer() when starting the quiz.
+//   nextBtn.innerHTML = "Next";
+//   shuffleArray(quizQuestions);
+//   showQuestion();
+//   startTimer(); //this start the timer when the quiz begins
+// }
 
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -321,35 +328,38 @@ function shuffleArray(array) {
 startQuiz();
 
 
-// this is assigning the timer function to the quiz  app
 
-const totalTime = 60;
-let timeRemaining = totalTime;
-let timerInterval;
+// Set the quiz duration in seconds
+const quizDurationInSeconds = 600; // 10 minutes
 
+// Initialize the timer
+timeRemaining = quizDurationInSeconds;
+updateTimer();
 
-// adding  fuction to start timer
-
-function startTimer(){
-  timerInterval = setInterval(updateTimer, 1000);
-}
-
-
-// adding function to updating the timer display
-
-function updateTimer(){
-  timeRemaining--;
-  timerELement.textContent = timeRemaining;
-
-
-  if(timeRemaining <= 0){
-    clearInterval(timerInterval);
-    handleTimeout();
+// Set up the timer interval
+const timerInterval = setInterval(() => {
+  if (timeRemaining > 0) {
+    timeRemaining--;
+    updateTimer();
+  } else {
+    // Quiz time is up, you can perform actions here
+    clearInterval(timerInterval); // Stop the timer
+    alert("Yoour Time's up!");
   }
+}, 1000); // Update every 1 second
+
+function updateTimer() {
+  // Format the time in MM:SS
+  const minutes = Math.floor(timeRemaining / 60);
+  const seconds = timeRemaining % 60;
+
+  // Display the timer
+  timerElement.innerText = `${padZero(minutes)}:${padZero(seconds)}`;
 }
 
-
-// adding function to stop the time 
+function padZero(number) {
+  return (number < 10 ? "0" : "") + number;
+}
 
 
 

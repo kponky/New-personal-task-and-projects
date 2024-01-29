@@ -28,17 +28,33 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  /* position: relative; */
   /* margin-top: -50px; */
   /* text-align: center; */
   
 }
 
+.timer_wrapper{
+  position: relative;
+}
 
+#timer{
+  background: rgb(29, 44, 0);
+  width: 50px;
+  padding: 5px 10px;
+  width: 60px;
+  color: rgb(238, 255, 0);
+  text-align: center;
+  font-size: 17px;
+  right: 10px;
+  top: 0;
 
+  position: absolute;
+}
 
 
 .app-container{
-  background-color: #ffffffb6;
+background-color: #ffffffb6;
 max-width: 700px;
 width: 100%;
 justify-content: center;
@@ -47,12 +63,12 @@ border-radius: 20px;
 } 
 
 .app-container h1{
-  font-size: 25px;
+  font-size: 28px;
   color: #010713;
   font-weight: bold;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: center;
-  border-bottom: 1px soild #333;
+  border-bottom: 1px solid #2d2727;
   padding-bottom: 16px;
   font-weight: bold;
 }
@@ -62,7 +78,7 @@ border-radius: 20px;
 }
 
 .quiz-wrapper h2{
-  font-size: 19px;
+  font-size: 20px;
   color: #000308;
   font-weight: 800;
   margin-bottom: 15px;
@@ -106,12 +122,13 @@ border-radius: 20px;
   background: #eae7e7d8;
   color: #0b0101;
   font-weight: 700;
-  font-size: 17px;
+  font-size: 18px;
   width: 100%;
   height: 50px;
   border: 1px solid transparent;
-  padding: 20px;
+  padding: 10px 20px;
   margin: 10px 0;
+  align-items: center;
   text-align: left;
   border-radius: 20px;
   cursor: pointer ;
@@ -119,8 +136,9 @@ border-radius: 20px;
 }
 
 .btn:hover:not([disabled]){
-  color:rgb(246, 238, 8);
-    background: linear-gradient(130deg, #7a017c2e,#4ea226, #083802cf);
+  color: #eeff00;
+  background-color: #636d7e8b;
+    /* background: linear-gradient(130deg, #7a017c2e,#4ea226, #083802cf); */
 }
 
 
@@ -138,8 +156,13 @@ border-radius: 20px;
   z-index: 0;
   text-align: center;
   border: none;
-  
-}
+  transition: all 0.3s ease;
+  }
+
+  #next-btn:hover{
+    background: rgb(29, 44, 0);
+    color: #eeff00;
+  }
 
 /* .glow-on-hover:before {
   content: '';
